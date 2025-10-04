@@ -1,6 +1,18 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function FullPageCarousel({ slides = [], autoPlayMs = 5000 }) {
+interface SlideType {
+  image: string;
+  title: string;
+  subtitle: string;
+}
+
+export default function FullPageCarousel({
+  slides = [],
+  autoPlayMs = 5000,
+}: {
+  slides: SlideType[];
+  autoPlayMs: number;
+}) {
   const [index, setIndex] = useState(0);
   const next = () => setIndex((i) => (i + 1) % slides.length);
   const prev = () => setIndex((i) => (i - 1 + slides.length) % slides.length);
