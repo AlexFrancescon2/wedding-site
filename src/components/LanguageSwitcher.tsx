@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import Flag from "react-world-flags";
 import { useTranslation } from "react-i18next";
+
+// import Flag from "react-world-flags";
 
 const LANGUAGES = [
   { code: "it", label: "IT", flagCode: "IT" },
@@ -59,10 +60,10 @@ const LanguageSwitcher = () => {
         onClick={() => setOpen((prev) => !prev)}
         className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md shadow-sm border border-gray-200 hover:bg-white transition"
       >
-        <Flag
+        {/* <Flag
           code={currentLang.flagCode}
           className="w-8 h-8 rounded-full object-cover"
-        />
+        /> */}
         <span className="font-semibold text-lg">{currentLang.label}</span>
       </button>
 
@@ -75,10 +76,10 @@ const LanguageSwitcher = () => {
               onClick={() => changeLanguage(lang.code)}
               className="flex items-center gap-3 px-4 py-2 w-full text-left text-base hover:bg-gray-100 transition-colors"
             >
-              <Flag
+              {/* <Flag
                 code={lang.flagCode}
                 className="w-8 h-8 rounded-full object-cover"
-              />
+              /> */}
               <span className="font-semibold">{lang.code}</span>
             </button>
           ))}
