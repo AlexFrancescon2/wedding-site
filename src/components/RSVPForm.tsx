@@ -1,8 +1,12 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 import { CONFIG } from "../config";
 
-export default function RSVPForm({ t }) {
+export default function RSVPForm({
+  t,
+}: {
+  t: (key: string, options?: any) => string;
+}) {
   const [name, setName] = useState("");
   const [guests, setGuests] = useState(1);
   const [diet, setDiet] = useState("");
@@ -49,7 +53,8 @@ export default function RSVPForm({ t }) {
               type="number"
               min={1}
               value={guests}
-              onChange={(e) => setGuests(e.target.value)}
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              onChange={(e: any) => setGuests(e.target.value)}
               className="mt-1 block w-32 rounded-md border px-3 py-2"
             />
           </label>

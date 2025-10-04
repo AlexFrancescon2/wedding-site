@@ -1,7 +1,6 @@
 import { CONFIG } from "../config";
-import React from "react";
 
-export default function GiftSection({ t }) {
+export default function GiftSection({ t }: { t: any }) {
   const qrUrl = `https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl=${encodeURIComponent(
     CONFIG.paymentUrl
   )}`;
