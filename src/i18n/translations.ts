@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
+export type LanguageT = "it" | "en" | "fr";
 
-type LanguageT = "it" | "fr" | "en";
-
-type TranslationT = {
-  [lang in LanguageT]: Record<string, string>;
+export type TranlationsT = {
+  [L in LanguageT]: Record<string, string>;
 };
 
-export const translations: TranslationT = {
+export const translations: TranlationsT = {
   it: {
     heroTitle: "Ci sposiamo!",
     heroSubtitle: "Unisciti a noi per celebrare il nostro giorno speciale",
@@ -50,21 +48,3 @@ export const translations: TranslationT = {
     language: "Langue",
   },
 };
-
-export function useI18n() {
-  const [lang, setLang] = useState<LanguageT>(() => {
-    try {
-      const stored = localStorage.getItem("ws_lang");
-      if (stored === "it" || stored === "fr" || stored === "en") {
-        return stored;
-      }
-      return "it";
-    } catch {
-      return "it";
-    }
-  });
-
-  useEffect(() => localStorage.setItem("ws_lang", lang), [lang]);
-  const t = (key: string | number) => translations[lang]?.[key] || key;
-  return { lang, setLang, t };
-}

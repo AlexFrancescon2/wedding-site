@@ -1,6 +1,8 @@
 import { WEDDING_DATE } from "../globals";
+import { useI18n } from "../i18n/use-i18n";
 
-export const WeddingInfo = ({ lang = "it" }) => {
+export const WeddingInfo = () => {
+  const { lang } = useI18n();
   const weddingDate: Date = new Date(WEDDING_DATE);
 
   // Format the day and rest

@@ -1,4 +1,4 @@
-import LanguageSwitcher from "./LanguageSwitcher";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 // import { Link } from "react-router-dom";
 

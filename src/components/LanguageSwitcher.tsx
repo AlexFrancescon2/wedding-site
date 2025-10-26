@@ -1,31 +1,42 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { useTranslation } from "react-i18next";
+import type { LanguageT } from "../i18n/translations";
+import { useI18n } from "../i18n/use-i18n";
 
-const LANGUAGES = [
+interface LanguagesT {
+  code: LanguageT;
+  label: string;
+  flag: string;
+}
+
+const LANGUAGES: LanguagesT[] = [
   { code: "it", label: "Italiano", flag: "/flags/it.png" },
   { code: "en", label: "English", flag: "/flags/en.png" },
   { code: "fr", label: "Français", flag: "/flags/fr.png" },
 ];
 
 export const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
+  const { lang, setLang } = useI18n();
   const location = useLocation();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  const currentLang =
-    LANGUAGES.find((l) => l.code === i18n.language) || LANGUAGES[0];
+  const currentLang = LANGUAGES.find((l) => l.code === lang) || LANGUAGES[0];
 
-  useEffect(() => {
+  const changeLanguage = (newLang: LanguageT) => {
+    setLang(newLang);
+
     const params = new URLSearchParams(location.search);
-    const lang = params.get("lang");
-    if (lang && LANGUAGES.some((l) => l.code === lang)) {
-      i18n.changeLanguage(lang);
-    }
-  }, [location.search]);
+    params.set("lang", newLang);
+    navigate(
+      { pathname: location.pathname, search: params.toString() },
+      { replace: true }
+    );
+
+    setOpen(false);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -36,17 +47,6 @@ export const LanguageSwitcher = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
-  const changeLanguage = (lang: string) => {
-    i18n.changeLanguage(lang);
-    const params = new URLSearchParams(location.search);
-    params.set("lang", lang);
-    navigate(
-      { pathname: location.pathname, search: params.toString() },
-      { replace: true }
-    );
-    setOpen(false);
-  };
 
   return (
     <div className="relative inline-block" ref={ref}>
@@ -65,7 +65,6 @@ export const LanguageSwitcher = () => {
         />
         <span className="font-medium text-sm">{currentLang.label}</span>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           className={`w-4 h-4 transition-transform duration-200 ${
             open ? "rotate-180" : ""
           }`}
@@ -82,7 +81,6 @@ export const LanguageSwitcher = () => {
         </svg>
       </button>
 
-      {/* Dropdown */}
       {open && (
         <div
           className="absolute right-0 mt-2 w-40 bg-white
