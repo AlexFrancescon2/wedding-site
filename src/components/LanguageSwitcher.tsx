@@ -3,15 +3,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import { useTranslation } from "react-i18next";
 
-// import Flag from "react-world-flags";
-
 const LANGUAGES = [
-  { code: "it", label: "IT", flagCode: "IT" },
-  { code: "en", label: "EN", flagCode: "GB" },
-  { code: "fr", label: "FR", flagCode: "FR" },
+  { code: "it", label: "Italiano", flag: "/flags/it.png" },
+  { code: "en", label: "English", flag: "/flags/en.png" },
+  { code: "fr", label: "Français", flag: "/flags/fr.png" },
 ];
 
-const LanguageSwitcher = () => {
+export const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
@@ -21,7 +19,6 @@ const LanguageSwitcher = () => {
   const currentLang =
     LANGUAGES.find((l) => l.code === i18n.language) || LANGUAGES[0];
 
-  // Sync i18n from URL query param
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const lang = params.get("lang");
@@ -30,7 +27,6 @@ const LanguageSwitcher = () => {
     }
   }, [location.search]);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
@@ -41,46 +37,68 @@ const LanguageSwitcher = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Change language and update query param
   const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
     const params = new URLSearchParams(location.search);
-    params.set("lang", lang); // append or replace lang param
+    params.set("lang", lang);
     navigate(
       { pathname: location.pathname, search: params.toString() },
       { replace: true }
     );
-    setOpen(false); // close dropdown
+    setOpen(false);
   };
 
   return (
     <div className="relative inline-block" ref={ref}>
-      {/* Selected Language Button */}
+      {/* Selected language button */}
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md shadow-sm border border-gray-200 hover:bg-white transition"
+        className="flex items-center gap-2 px-3 py-2 rounded-full
+                   bg-white text-gray-800
+                   hover:bg-gray-100 transition-all duration-150
+                   focus:outline-none focus:ring-2 focus:ring-blue-400"
       >
-        {/* <Flag
-          code={currentLang.flagCode}
-          className="w-8 h-8 rounded-full object-cover"
-        /> */}
-        <span className="font-semibold text-lg">{currentLang.label}</span>
+        <img
+          src={currentLang.flag}
+          alt={currentLang.code}
+          className="w-5 h-5 sm:w-6 sm:h-6"
+        />
+        <span className="font-medium text-sm">{currentLang.label}</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={`w-4 h-4 transition-transform duration-200 ${
+            open ? "rotate-180" : ""
+          }`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
       </button>
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute right-0 mt-2 w-36 bg-white/90 backdrop-blur-md shadow-lg rounded-lg border border-gray-100 z-50">
+        <div
+          className="absolute right-0 mt-2 w-40 bg-white
+                     shadow-md z-50 animate-fadeSlide overflow-hidden rounded-md"
+        >
           {LANGUAGES.filter((l) => l.code !== currentLang.code).map((lang) => (
             <button
               key={lang.code}
               onClick={() => changeLanguage(lang.code)}
-              className="flex items-center gap-3 px-4 py-2 w-full text-left text-base hover:bg-gray-100 transition-colors"
+              className="flex items-center gap-3 px-4 py-2 w-full
+                         text-left text-gray-800 text-sm bg-white
+                         hover:bg-gray-200 transition-colors duration-150
+                         rounded-none border-none"
             >
-              {/* <Flag
-                code={lang.flagCode}
-                className="w-8 h-8 rounded-full object-cover"
-              /> */}
-              <span className="font-semibold">{lang.code}</span>
+              <img src={lang.flag} alt={lang.code} className="w-5 h-5" />
+              <span>{lang.label}</span>
             </button>
           ))}
         </div>
@@ -88,5 +106,3 @@ const LanguageSwitcher = () => {
     </div>
   );
 };
-
-export default LanguageSwitcher;
