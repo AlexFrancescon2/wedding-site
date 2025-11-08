@@ -1,10 +1,9 @@
-import { useNavigate } from "react-router-dom";
-
 export const RSVPButton = () => {
-  const navigate = useNavigate();
-
   const handleClick = () => {
-    navigate("/rsvp");
+    const formSection = document.getElementById("rsvp-form");
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
