@@ -1,4 +1,5 @@
 import { WEDDING_DATE } from "../globals";
+import { capitalize } from "../utils";
 import { useI18n } from "../i18n/use-i18n";
 
 export const WeddingInfo = () => {
@@ -16,7 +17,9 @@ export const WeddingInfo = () => {
   return (
     <div className="flex items-center justify-between rounded-full bg-white shadow-lg overflow-hidden w-[95vw] md:w-[400px] mx-auto">
       <div className="flex-1 text-center p-6">
-        <div className="text-xl text-gray-800 font-body">{dayName}</div>
+        <div className="text-xl text-gray-800 font-body">
+          {capitalize(dayName)}
+        </div>
         <div className="text-l text-gray-800 font-body">{rest}</div>
       </div>
 
