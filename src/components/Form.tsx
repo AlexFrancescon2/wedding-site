@@ -44,21 +44,29 @@ export const Form = () => {
   };
 
   return (
-    <div className="relative h-[120vh] w-screen overflow-hidden bg-primary clip-trapezoid-both flex items-center justify-center">
-      <div id="rsvp-form" className="absolute top-[50px]" />
-
+    <div className="relative min-h-[120vh] w-screen overflow-hidden bg-primary clip-trapezoid-both flex items-center justify-center ">
+      <div id="rsvp-form" className="absolute top-[60px]" />
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white/20 backdrop-blur-md p-10 rounded-3xl max-w-2xl w-full text-black shadow-xl"
+        className="bg-white/20 backdrop-blur-md p-10 rounded-3xl max-w-2xl w-full text-black shadow-xl my-[200px]"
       >
-        <h2 className="text-4xl font-bold mb-8 text-center text-white">RSVP</h2>
+        <h2 className="text-4xl font-bold mb-8 text-center text-primarydark">
+          RSVP
+        </h2>
 
         {/* Name */}
         <div className="mb-6">
-          <label className="block mb-2 font-semibold text-white">Nome</label>
+          <label className="block mb-2 font-semibold text-primarydark">
+            Nome
+          </label>
           <input
             {...register("name", { required: "Inserisci il tuo nome" })}
-            className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500 border border-white/30 focus:border-primary focus:ring focus:ring-primary/30 transition"
+            className="
+    w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500 
+    border border-transparent
+    focus:border-primarydark focus:outline-none
+    transition
+  "
             placeholder="Il tuo nome completo"
           />
           {errors.name && (
@@ -68,7 +76,7 @@ export const Form = () => {
 
         {/* Number of people */}
         <div className="mb-6">
-          <label className="block mb-2 font-semibold text-white">
+          <label className="block mb-2 font-semibold text-primarydark">
             Numero di persone
           </label>
           <input
@@ -77,7 +85,9 @@ export const Form = () => {
               required: "Indica il numero di persone",
               min: { value: 1, message: "Almeno 1 persona" },
             })}
-            className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500 border border-white/30 focus:border-primary focus:ring focus:ring-primary/30 transition"
+            className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500     border border-transparent
+    focus:border-primarydark focus:outline-none
+    transition"
             placeholder="2"
           />
           {errors.people && (
@@ -88,24 +98,28 @@ export const Form = () => {
         {/* Two fields side by side: Dietary info + number of people with dietary restrictions */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
-            <label className="block mb-2 font-semibold text-white">
+            <label className="block mb-2 font-semibold text-primarydark">
               Informazioni alimentari
             </label>
             <input
               {...register("dietary")}
-              className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500 border border-white/30 focus:border-primary focus:ring focus:ring-primary/30 transition"
+              className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500     border border-transparent
+    focus:border-primarydark focus:outline-none
+    transition"
               placeholder="Vegan, senza glutine, ecc."
             />
           </div>
 
           <div>
-            <label className="block mb-2 font-semibold text-white">
+            <label className="block mb-2 font-semibold text-primarydark">
               Numero con restrizioni alimentari
             </label>
             <input
               type="number"
               {...register("dietaryCount")}
-              className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500 border border-white/30 focus:border-primary focus:ring focus:ring-primary/30 transition"
+              className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500     border border-transparent
+    focus:border-primarydark focus:outline-none
+    transition"
               placeholder="1"
             />
           </div>
@@ -113,25 +127,29 @@ export const Form = () => {
 
         {/* Number of kids */}
         <div className="mb-6">
-          <label className="block mb-2 font-semibold text-white">
+          <label className="block mb-2 font-semibold text-primarydark">
             Numero di bambini (&lt;8 anni)
           </label>
           <input
             type="number"
             {...register("kids")}
-            className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500 border border-white/30 focus:border-primary focus:ring focus:ring-primary/30 transition"
+            className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500     border border-transparent
+    focus:border-primarydark focus:outline-none
+    transition"
             placeholder="0"
           />
         </div>
 
         {/* Additional notes */}
         <div className="mb-6">
-          <label className="block mb-2 font-semibold text-white">
+          <label className="block mb-2 font-semibold text-primarydark">
             Note aggiuntive
           </label>
           <textarea
             {...register("notes")}
-            className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500 border border-white/30 focus:border-primary focus:ring focus:ring-primary/30 transition"
+            className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500     border border-transparent
+    focus:border-primarydark focus:outline-none
+    transition"
             placeholder="Qualsiasi informazione aggiuntiva"
           />
         </div>
@@ -140,7 +158,7 @@ export const Form = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-4 bg-white text-primary font-semibold rounded-full hover:bg-white/90 transition text-lg"
+          className="w-full py-4 bg-white text-primarydark font-semibold rounded-full hover:bg-white/90 transition text-lg"
         >
           {isSubmitting ? "Invio..." : "Invia RSVP"}
         </button>
@@ -149,7 +167,7 @@ export const Form = () => {
       {showSuccess && (
         <SuccessPopup
           message="Grazie! RSVP ricevuto 🎉"
-          gifUrl="https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif"
+          gifUrl="https://i.pinimg.com/originals/ce/4e/74/ce4e7484ae0727138d035eea8155f600.gif"
           onClose={() => setShowSuccess(false)}
         />
       )}

@@ -33,9 +33,9 @@ export const SuccessPopup = ({
               className="mx-auto mb-4 w-32 h-32"
             />
           )}
-          <h2 className="text-xl font-bold mb-2">{message}</h2>
+          <h2 className="text-xl font-bold mb-2 text-primarydark">{message}</h2>
           <button
-            className="mt-4 px-6 py-2 bg-primary text-white rounded-full font-semibold hover:bg-primary/80 transition"
+            className="mt-4 px-6 py-2 bg-primarydark text-white rounded-full font-semibold hover:bg-primary/80 transition"
             onClick={onClose}
           >
             Chiudi
