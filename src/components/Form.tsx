@@ -1,8 +1,9 @@
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 
-import { SuccessPopup } from "./SuccessPopup";
+import { Popup } from "./SuccessPopup";
 import { db } from "../../firebase";
 import { useForm } from "react-hook-form";
+import { useI18n } from "../i18n/use-i18n";
 import { useState } from "react";
 
 interface FormData {
@@ -15,7 +16,9 @@ interface FormData {
 }
 
 export const Form = () => {
+  const { t } = useI18n();
   const [showSuccess, setShowSuccess] = useState(false);
+  const [showFail, setShowFail] = useState(false);
   const {
     register,
     handleSubmit,
@@ -39,7 +42,7 @@ export const Form = () => {
       setShowSuccess(true);
     } catch (error) {
       console.error(error);
-      alert("Oops! Something went wrong. Please try again.");
+      setShowFail(true);
     }
   };
 
@@ -50,24 +53,24 @@ export const Form = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="bg-white/20 backdrop-blur-md p-10 rounded-3xl max-w-2xl w-full text-black shadow-xl my-[200px]"
       >
-        <h2 className="text-4xl font-bold mb-8 text-center text-primarydark">
-          RSVP
+        <h2 className="text-4xl font-bold mb-8 text-center text-primarydark underline">
+          {t("formTitle")}
         </h2>
 
         {/* Name */}
         <div className="mb-6">
           <label className="block mb-2 font-semibold text-primarydark">
-            Nome
+            {t("name")}
           </label>
           <input
-            {...register("name", { required: "Inserisci il tuo nome" })}
+            {...register("name", { required: t("namePlaceholder") })}
             className="
     w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500 
     border border-transparent
     focus:border-primarydark focus:outline-none
     transition
   "
-            placeholder="Il tuo nome completo"
+            placeholder={t("namePlaceholder")}
           />
           {errors.name && (
             <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
@@ -77,18 +80,18 @@ export const Form = () => {
         {/* Number of people */}
         <div className="mb-6">
           <label className="block mb-2 font-semibold text-primarydark">
-            Numero di persone
+            {t("totalAttendees")}
           </label>
           <input
             type="number"
             {...register("people", {
-              required: "Indica il numero di persone",
-              min: { value: 1, message: "Almeno 1 persona" },
+              required: t("totalAttendeesRequired"),
+              min: { value: 1, message: t("totalAttendeesMin") },
             })}
             className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500     border border-transparent
     focus:border-primarydark focus:outline-none
     transition"
-            placeholder="2"
+            placeholder={t("totalAttendeesRequired")}
           />
           {errors.people && (
             <p className="text-red-400 text-sm mt-1">{errors.people.message}</p>
@@ -99,20 +102,20 @@ export const Form = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
             <label className="block mb-2 font-semibold text-primarydark">
-              Informazioni alimentari
+              {t("dietaryRestrictions")}
             </label>
             <input
               {...register("dietary")}
               className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500     border border-transparent
     focus:border-primarydark focus:outline-none
     transition"
-              placeholder="Vegan, senza glutine, ecc."
+              placeholder={t("dietaryRestrictionsPlaceholder")}
             />
           </div>
 
           <div>
             <label className="block mb-2 font-semibold text-primarydark">
-              Numero con restrizioni alimentari
+              {t("dietaryRestrictionsNumber")}
             </label>
             <input
               type="number"
@@ -120,7 +123,7 @@ export const Form = () => {
               className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500     border border-transparent
     focus:border-primarydark focus:outline-none
     transition"
-              placeholder="1"
+              placeholder={t("dietaryRestrictionsNumberPlaceholder")}
             />
           </div>
         </div>
@@ -128,7 +131,7 @@ export const Form = () => {
         {/* Number of kids */}
         <div className="mb-6">
           <label className="block mb-2 font-semibold text-primarydark">
-            Numero di bambini (&lt;8 anni)
+            {t("NumberOfKids")}
           </label>
           <input
             type="number"
@@ -136,21 +139,21 @@ export const Form = () => {
             className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500     border border-transparent
     focus:border-primarydark focus:outline-none
     transition"
-            placeholder="0"
+            placeholder={t("NumberOfKidsPlaceholder")}
           />
         </div>
 
         {/* Additional notes */}
         <div className="mb-6">
           <label className="block mb-2 font-semibold text-primarydark">
-            Note aggiuntive
+            {t("notes")}
           </label>
           <textarea
             {...register("notes")}
             className="w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500     border border-transparent
     focus:border-primarydark focus:outline-none
     transition"
-            placeholder="Qualsiasi informazione aggiuntiva"
+            placeholder={t("notesPlaceholder")}
           />
         </div>
 
@@ -160,19 +163,23 @@ export const Form = () => {
           disabled={isSubmitting}
           className="w-full py-4 bg-white text-primarydark font-semibold rounded-full hover:bg-white/90 transition text-lg"
         >
-          {isSubmitting ? "Invio..." : "Invia RSVP"}
+          {isSubmitting ? t("sending") : t("send")}
         </button>
       </form>
-
       {showSuccess && (
-        <SuccessPopup
-          message="Grazie! RSVP ricevuto 🎉"
+        <Popup
+          message={t("formSuccessTitle")}
           gifUrl="https://i.pinimg.com/originals/ce/4e/74/ce4e7484ae0727138d035eea8155f600.gif"
           onClose={() => setShowSuccess(false)}
+        />
+      )}
+      {showFail && (
+        <Popup
+          message={t("formFailTitle")}
+          gifUrl="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyeXhtbzgybHQ0ODVtZXF4cjN4MTZ5ejRhaDQxMWI1MjZuY3Z3d2VkeiZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/Y0xtyHetvfEBIk5FKh/200w.gif"
+          onClose={() => setShowFail(false)}
         />
       )}
     </div>
   );
 };
-
-///entry.1673626679=Nome&entry.124610597=People&entry.2012505343=Dieta+info&entry.2015780199=number+of+dieta&entry.121606933=number+of+kids&entry.999310727=NOteeees

@@ -49,7 +49,7 @@ export const LanguageSwitcher = () => {
   }, []);
 
   return (
-    <div className="relative inline-block" ref={ref}>
+    <div className="fixed top-0 right-0 z-50 p-4" ref={ref}>
       {/* Selected language button */}
       <button
         onClick={() => setOpen((prev) => !prev)}
@@ -84,7 +84,7 @@ export const LanguageSwitcher = () => {
       {open && (
         <div
           className="absolute right-0 mt-2 w-40 bg-white
-                     shadow-md z-50 animate-fadeSlide overflow-hidden rounded-md"
+                     shadow-md z-50 animate-fadeSlide overflow-hidden rounded-md right-4"
         >
           {LANGUAGES.filter((l) => l.code !== currentLang.code).map((lang) => (
             <button

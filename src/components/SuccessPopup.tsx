@@ -1,16 +1,33 @@
 import { AnimatePresence, motion } from "framer-motion";
 
+import { useEffect } from "react";
+import { useI18n } from "../i18n/use-i18n";
+
 interface SuccessPopupProps {
   message: string;
   gifUrl?: string;
   onClose: () => void;
 }
 
-export const SuccessPopup = ({
-  message,
-  gifUrl,
-  onClose,
-}: SuccessPopupProps) => {
+export const Popup = ({ message, gifUrl, onClose }: SuccessPopupProps) => {
+  const { t } = useI18n();
+
+  useEffect(() => {
+    // Save original overflow styles
+    const originalBodyOverflow = document.body.style.overflow;
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+
+    // Prevent scrolling
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    return () => {
+      // Restore original styles
+      document.body.style.overflow = originalBodyOverflow;
+      document.documentElement.style.overflow = originalHtmlOverflow;
+    };
+  }, []);
+
   return (
     <AnimatePresence>
       <motion.div
@@ -38,7 +55,7 @@ export const SuccessPopup = ({
             className="mt-4 px-6 py-2 bg-primarydark text-white rounded-full font-semibold hover:bg-primary/80 transition"
             onClick={onClose}
           >
-            Chiudi
+            {t("close")}
           </button>
         </motion.div>
       </motion.div>
