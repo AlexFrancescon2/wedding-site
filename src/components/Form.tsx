@@ -37,17 +37,22 @@ export const Form = () => {
         notes: data.notes || "",
         timestamp: Timestamp.fromDate(new Date()),
       });
-
       reset();
       setShowSuccess(true);
-    } catch (error) {
-      console.error(error);
+    } catch {
       setShowFail(true);
     }
   };
 
+  const onSuccessCallback = () => {
+    const formSection = document.getElementById("honeymoon");
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="relative min-h-[120vh] w-screen overflow-hidden bg-primary clip-trapezoid-both flex items-center justify-center ">
+    <div className="relative min-h-[120vh] w-screen overflow-hidden bg-primary clip-trapezoid-both flex items-center justify-center z-10">
       <div id="rsvp-form" className="absolute top-[60px]" />
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -170,7 +175,10 @@ export const Form = () => {
         <Popup
           message={t("formSuccessTitle")}
           gifUrl="https://i.pinimg.com/originals/ce/4e/74/ce4e7484ae0727138d035eea8155f600.gif"
-          onClose={() => setShowSuccess(false)}
+          onClose={() => {
+            setShowSuccess(false);
+            onSuccessCallback();
+          }}
         />
       )}
       {showFail && (
