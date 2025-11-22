@@ -190,7 +190,7 @@ export const Form = () => {
           src={branches}
           alt="branches"
           className="absolute z-[-1] invert brightness-0
-          w-[350px] right-[-150px] top-80 rotate-[15deg]
+          w-[350px] right-[-255px] top-[430px] rotate-[15deg]
           // md
           md:w-[280px] md:right-8 md:top-72 md:rotate-[-15deg]
           //lg
