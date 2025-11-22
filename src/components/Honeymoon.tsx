@@ -1,3 +1,4 @@
+import bgHoneymoon from "../assets/bg-honeymoon.jpg";
 import { motion } from "framer-motion";
 import plane from "../assets/plane.png";
 import { useI18n } from "../i18n/use-i18n";
@@ -6,15 +7,17 @@ export const Honeymoon = () => {
   const { t } = useI18n();
 
   return (
-    <div className="relative">
-      {/* Top overlay if needed */}
-      <div className="absolute w-screen -top-[70px] h-[150px] bg-white text-black" />
-
-      <div className="py-16 bg-white px-4 sm:px-0">
+    <div className="relative -mt-[70px] w-screen">
+      {/* Blurred background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center filter blur-sm z-0"
+        style={{ backgroundImage: `url(${bgHoneymoon})` }}
+      />
+      <div className="pt-36 pb-16 px-5">
         <motion.div
           id="honeymoon"
-          className="flex items-stretch max-w-full sm:max-w-4xl mx-auto rounded-3xl shadow-2xl overflow-hidden"
-          initial={{ x: -200, opacity: 0 }}
+          className="relative flex items-stretch max-w-full sm:max-w-4xl mx-auto rounded-3xl shadow-2xl overflow-hidden z-10"
+          initial={{ x: -200, opacity: 1 }}
           whileInView={{
             x: 0,
             opacity: 1,
@@ -22,8 +25,7 @@ export const Honeymoon = () => {
           }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          {/* Left panel with plane */}
-          <div className="w-1/3 bg-primary flex items-center justify-center p-4 sm:p-8 relative">
+          <div className="w-1/3 bg-primary/70 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 relative">
             <motion.img
               src={plane}
               alt="plane"
@@ -37,12 +39,12 @@ export const Honeymoon = () => {
                 repeatType: "loop",
                 ease: "easeInOut",
               }}
-              className=" sm:w-20 md:w-40 relative z-10"
+              className="sm:w-22 md:w-40 relative z-10"
             />
           </div>
 
           {/* Right panel with text */}
-          <div className="flex-1 bg-primarydark p-4 sm:p-12 text-white relative z-10">
+          <div className="flex-1 bg-primarydark/70 backdrop-blur-xl p-4 sm:p-12 text-white relative z-10">
             <h2 className="text-lg sm:text-3xl lg:text-4xl font-semibold tracking-wide mb-4">
               {t("honeymoonTitle")}
             </h2>
