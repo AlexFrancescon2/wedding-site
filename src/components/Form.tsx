@@ -1,6 +1,7 @@
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 
 import { Popup } from "./SuccessPopup";
+import branches from "../assets/branches.svg";
 import { db } from "../../firebase";
 import rings from "../assets/wedding-rings.png";
 import { useForm } from "react-hook-form";
@@ -56,10 +57,20 @@ export const Form = () => {
     <div className="relative min-h-[120vh] w-screen overflow-hidden bg-primary clip-trapezoid-both flex items-center justify-center z-10">
       <div id="rsvp-form" className="absolute top-[60px]" />
 
+      <img
+        src={branches}
+        alt="branches"
+        className="
+    absolute
+    invert brightness-0 scale-x-[-1]
+    rotate-[15deg] left-48 top-72
+    w-[180px] md:w-[280px] 
+  "
+      />
       {/* bg-white/20 backdrop-blur-md shadow-xl rounded-3xl */}
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" p-10  max-w-2xl w-full mt-[100px] mb-[150px]"
+        className=" p-10  max-w-2xl w-full mt-[100px] mb-[150px] z-4"
       >
         <div className="flex items-center justify-center mb-10">
           <img src={rings} alt="Wedding rings" className="w-32" />;
@@ -172,6 +183,16 @@ export const Form = () => {
           {isSubmitting ? t("sending") : t("send")}
         </button>
       </form>
+      <img
+        src={branches}
+        alt="branches"
+        className="
+    absolute
+    invert brightness-0
+    rotate-[-15deg] right-48 top-72
+    w-[180px] md:w-[280px] 
+  "
+      />
       {showSuccess && (
         <Popup
           message={t("formSuccessTitle")}
