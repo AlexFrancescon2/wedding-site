@@ -61,12 +61,12 @@ export const Form = () => {
         <img
           src={branches}
           alt="branches"
-          className="
-    absolute
-    invert brightness-0 scale-x-[-1]
-    rotate-[15deg] left-48 top-72
-    w-[180px] md:w-[280px] 
-  "
+          className="absolute z-[-1] invert brightness-0 scale-x-[-1]
+          w-[350px] left-[-150px] top-80 rotate-[-15deg]
+          // md
+          md:w-[280px] md:left-8 md:top-72 md:rotate-[15deg]
+          //lg
+          lg:w-[280px] lg:left-48 lg:top-72 lg: rotate-[15deg]"
         />
         {/* bg-white/20 backdrop-blur-md shadow-xl rounded-3xl */}
         <form
@@ -189,12 +189,12 @@ export const Form = () => {
         <img
           src={branches}
           alt="branches"
-          className="
-    absolute
-    invert brightness-0
-    rotate-[-15deg] right-48 top-72
-    w-[180px] md:w-[280px] 
-  "
+          className="absolute z-[-1] invert brightness-0
+          w-[350px] right-[-150px] top-80 rotate-[15deg]
+          // md
+          md:w-[280px] md:right-8 md:top-72 md:rotate-[-15deg]
+          //lg
+          lg:w-[280px] lg:right-48 lg:top-72 lg:rotate-[-15deg]"
         />
         {showSuccess && (
           <Popup
