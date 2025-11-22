@@ -47,12 +47,11 @@ export const Honeymoon = () => {
             </h2>
 
             <p className="text-xs sm:text-lg lg:text-xl mb-6 max-w-full">
-              Your presence is the greatest gift!
+              {t("honeymoonSubtitle")}
             </p>
 
             <p className="text-xs sm:text-base lg:text-lg mb-8 max-w-full">
-              If you wish to add a sprinkle of love to our honeymoon, you may do
-              so here:
+              {t("honeymoonText")}
             </p>
 
             <div className="bg-white p-3 sm:p-8 rounded-2xl shadow-bg max-w-full mx-auto text-center transform hover:-translate-y-1 transition-all duration-300 text-primarydark text-xs sm:text-base">

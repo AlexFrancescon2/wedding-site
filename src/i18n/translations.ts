@@ -29,10 +29,9 @@ export const translations: TranlationsT = {
       "Yay! Sei nella lista degli ospiti. Ci vediamo al grande giorno!",
     formFailTitle: "Ouch! Qualcosa è andato storto, per favore riprova",
     honeymoonTitle: "Per chi se lo fosse chiesto",
-    honeymoonSubtitle:
-      "Se vuoi partecipare al nostro viaggio con un pensiero, ecco un modo semplice:",
+    honeymoonSubtitle: "La tua presenza è il regalo più grande!",
     honeymoonText:
-      "Il tuo regalo ci aiuterà a trasformare questo viaggio in un ricordo per sempre.",
+      "Se desideri aiutarci a trasformare questo viaggio in un ricordo per sempre, puoi farlo qui:",
 
     // Old
     heroTitle: "Ci sposiamo!",
@@ -72,37 +71,9 @@ export const translations: TranlationsT = {
     close: "Close",
 
     honeymoonTitle: "For those who asked",
-    honeymoonSubtitle:
-      "If you’d like to join our journey in spirit, here’s how you can contribute:",
+    honeymoonSubtitle: "Your presence is the greatest gift!",
     honeymoonText:
-      "Your gift will help us turn this trip into a memory of a lifetime.",
-
-    // Old
-    heroTitle: "We're getting married!",
-    heroSubtitle: "Join us to celebrate our special day",
-    ourStory: "Our story",
-    details: "Event details",
-    rsvp: "RSVP / Sign up",
-    guests: "Number of people",
-    dietRequests: "Dietary requests",
-    submit: "Send RSVP",
-    thanks: "Thanks! Your RSVP was received.",
-    gift: "Contribute to our honeymoon",
-    gallery: "Gallery",
-    language: "Language",
+      "If you wish to help making our honeymoon into a memory of a lifetime, you may do here:",
   },
-  fr: {
-    heroTitle: "On se marie!",
-    heroSubtitle: "Rejoignez-nous pour célébrer notre journée spéciale",
-    ourStory: "Notre histoire",
-    details: "Détails de l'événement",
-    rsvp: "RSVP / Inscription",
-    guests: "Nombre de personnes",
-    dietRequests: "Demandes alimentaires",
-    submit: "Envoyer RSVP",
-    thanks: "Merci ! Votre réponse a été enregistrée.",
-    gift: "Contribuer à notre voyage de noces",
-    gallery: "Galerie",
-    language: "Langue",
-  },
+  fr: {},
 };
