@@ -2,6 +2,7 @@ import { Timestamp, addDoc, collection } from "firebase/firestore";
 
 import { Popup } from "./SuccessPopup";
 import { db } from "../../firebase";
+import rings from "../assets/wedding-rings.png";
 import { useForm } from "react-hook-form";
 import { useI18n } from "../i18n/use-i18n";
 import { useState } from "react";
@@ -54,14 +55,19 @@ export const Form = () => {
   return (
     <div className="relative min-h-[120vh] w-screen overflow-hidden bg-primary clip-trapezoid-both flex items-center justify-center z-10">
       <div id="rsvp-form" className="absolute top-[60px]" />
+
+      {/* bg-white/20 backdrop-blur-md shadow-xl rounded-3xl */}
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white/20 backdrop-blur-md p-10 rounded-3xl max-w-2xl w-full text-black shadow-xl my-[200px]"
+        className=" p-10  max-w-2xl w-full mt-[100px] mb-[150px]"
       >
+        <div className="flex items-center justify-center mb-10">
+          <img src={rings} alt="Wedding rings" className="w-32" />;
+        </div>
+
         <h2 className="text-4xl font-bold mb-8 text-center text-primarydark underline">
           {t("formTitle")}
         </h2>
-
         {/* Name */}
         <div className="mb-6">
           <label className="block mb-2 font-semibold text-primarydark">
@@ -81,7 +87,6 @@ export const Form = () => {
             <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
           )}
         </div>
-
         {/* Number of people */}
         <div className="mb-6">
           <label className="block mb-2 font-semibold text-primarydark">
@@ -102,7 +107,6 @@ export const Form = () => {
             <p className="text-red-400 text-sm mt-1">{errors.people.message}</p>
           )}
         </div>
-
         {/* Two fields side by side: Dietary info + number of people with dietary restrictions */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
@@ -132,7 +136,6 @@ export const Form = () => {
             />
           </div>
         </div>
-
         {/* Number of kids */}
         <div className="mb-6">
           <label className="block mb-2 font-semibold text-primarydark">
@@ -147,7 +150,6 @@ export const Form = () => {
             placeholder={t("NumberOfKidsPlaceholder")}
           />
         </div>
-
         {/* Additional notes */}
         <div className="mb-6">
           <label className="block mb-2 font-semibold text-primarydark">
@@ -161,7 +163,6 @@ export const Form = () => {
             placeholder={t("notesPlaceholder")}
           />
         </div>
-
         {/* Submit button */}
         <button
           type="submit"

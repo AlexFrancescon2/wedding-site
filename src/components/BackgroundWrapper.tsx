@@ -1,8 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
-import img1 from "../assets/matrimonio3.jpg";
-import img2 from "../assets/matrimonio2.jpg";
-import img3 from "../assets/matrimonio.jpg";
-import mobileImg1 from "../assets/bg-mobile-1.jpeg";
+import img1 from "../assets/bg-desktop.jpg";
+import mobileImg1 from "../assets/bg-mobile.jpg";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface Props {
@@ -10,7 +8,7 @@ interface Props {
 }
 
 export const BackgroundWrapper = ({ children }: Props) => {
-  const desktopImages = [img1, img2, img3];
+  const desktopImages = [img1];
   const mobileImages = [mobileImg1];
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   const images = isMobile ? mobileImages : desktopImages;
