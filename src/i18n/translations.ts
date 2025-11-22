@@ -28,7 +28,7 @@ export const translations: TranlationsT = {
     formSuccessTitle:
       "Yay! Sei nella lista degli ospiti. Ci vediamo al grande giorno!",
     formFailTitle: "Ouch! Qualcosa è andato storto, per favore riprova",
-    honeymoonTitle: "Unisciti alla nostra luna di miele ✈️",
+    honeymoonTitle: "Per chi se lo fosse chiesto",
     honeymoonSubtitle:
       "Se vuoi partecipare al nostro viaggio con un pensiero, ecco un modo semplice:",
     honeymoonText:
@@ -71,7 +71,7 @@ export const translations: TranlationsT = {
     formFailTitle: "Ouch! Something went wrong, please try again",
     close: "Close",
 
-    honeymoonTitle: "Be part of our honeymoon adventure ✈️",
+    honeymoonTitle: "For those who asked",
     honeymoonSubtitle:
       "If you’d like to join our journey in spirit, here’s how you can contribute:",
     honeymoonText:
