@@ -55,7 +55,7 @@ export const Form = () => {
 
   return (
     <>
-      <div className="relative min-h-[120vh] w-screen overflow-hidden bg-primary clip-trapezoid-both flex items-center justify-center z-10">
+      <div className="relative min-h-[120vh] w-screen overflow-hidden bg-primary clip-trapezoid-both flex items-center justify-center z-10 font-body">
         <div id="rsvp-form" className="absolute top-[60px]" />
 
         <img
@@ -74,10 +74,10 @@ export const Form = () => {
           className=" p-10  max-w-2xl w-full mt-[100px] mb-[150px] z-4"
         >
           <div className="flex items-center justify-center mb-10">
-            <img src={rings} alt="Wedding rings" className="w-32" />;
+            <img src={rings} alt="Wedding rings" className="w-28" />
           </div>
 
-          <h2 className="text-4xl font-bold mb-8 text-center text-primarydark underline">
+          <h2 className="text-6xl font-bold mb-12 text-center text-white uppercase">
             {t("formTitle")}
           </h2>
           {/* Name */}

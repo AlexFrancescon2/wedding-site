@@ -7,7 +7,7 @@ export const Honeymoon = () => {
   const { t } = useI18n();
 
   return (
-    <div className="relative -mt-[70px] w-screen">
+    <div className="relative -mt-[70px] w-screen font-body">
       {/* Blurred background image */}
       <div
         className="absolute inset-0 bg-cover bg-center filter blur-sm z-0"
