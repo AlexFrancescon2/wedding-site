@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { WEDDING_DATE } from "../globals";
+import { useI18n } from "../i18n/use-i18n";
 
 interface CountdownTime {
   months: number;
@@ -9,6 +10,7 @@ interface CountdownTime {
 }
 
 export const Countdown = () => {
+  const { t } = useI18n();
   // Random target date for now
   const targetDate = new Date(WEDDING_DATE);
 
@@ -48,21 +50,21 @@ export const Countdown = () => {
           <div className="mb-3">
             {timeLeft.months.toString().padStart(2, "0")}
           </div>
-          <div className="text-sm font-body">Months</div>
+          <div className="text-sm font-body">{t("months")}</div>
         </div>
         <span>:</span>
         <div className="text-center">
           <div className="mb-3">
             {timeLeft.days.toString().padStart(2, "0")}
           </div>
-          <div className="text-sm font-body">Days</div>
+          <div className="text-sm font-body">{t("days")}</div>
         </div>
         <span>:</span>
         <div className="text-center">
           <div className="mb-3">
             {timeLeft.hours.toString().padStart(2, "0")}
           </div>
-          <div className="text-sm font-body">Hours</div>
+          <div className="text-sm font-body">{t("hours")}</div>
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@ import { useState } from "react";
 
 interface FormData {
   name: string;
+  email: string;
   people: number;
   dietary: string;
   dietaryCount: number;
@@ -32,6 +33,7 @@ export const Form = () => {
     try {
       await addDoc(collection(db, "rsvps"), {
         name: data.name || "",
+        email: data.email || "",
         people: Number(data.people) || 0,
         dietary: data.dietary || "",
         dietaryCount: Number(data.dietaryCount) || 0,
@@ -98,6 +100,28 @@ export const Form = () => {
             />
             {errors.name && (
               <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
+            )}
+          </div>
+          {/* Email */}
+          <div className="mb-6">
+            <label className="block mb-2 font-semibold text-primarydark">
+              {t("email")}
+            </label>
+            <input
+              {...register("email", { required: t("emailPlaceholder") })}
+              className="
+    w-full p-3 rounded-lg bg-white/80 text-black placeholder-gray-500 
+    border border-transparent
+    focus:border-primarydark focus:outline-none
+    transition
+  "
+              placeholder={t("emailPlaceholder")}
+              type="email"
+            />
+            {errors.name && (
+              <p className="text-red-400 text-sm mt-1">
+                {errors?.email?.message}
+              </p>
             )}
           </div>
           {/* Number of people */}

@@ -12,7 +12,7 @@ export const I18nProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLang] = useState<LanguageT>(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const queryLang: any = queryParams.get("lang");
-    return queryLang || "it";
+    return queryLang || "en";
   });
 
   const t = (key: string) => translations[lang]?.[key] || key;

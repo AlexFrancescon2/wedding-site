@@ -6,9 +6,14 @@ export type TranlationsT = {
 
 export const translations: TranlationsT = {
   it: {
+    days: "Giorni",
+    months: "Mesi",
+    hours: "Ore",
     formTitle: "Facci sapere se ci sei!",
     name: "Nome",
     namePlaceholder: "Inserisci il tuo nome",
+    email: "Email",
+    emailPlaceholder: "Inserisci la tua e-mail",
     totalAttendees: "Numero di Partecipanti",
     totalAttendeesRequired: "Indica il numero di partecipanti",
     totalAttendeesMin: "Almeno 1 persona",
@@ -48,9 +53,14 @@ export const translations: TranlationsT = {
     language: "Lingua",
   },
   en: {
+    days: "Days",
+    months: "Months",
+    hours: "Hours",
     formTitle: "A pinch of information from our guests",
     name: "Name",
     namePlaceholder: "Type your name",
+    email: "Email",
+    emailPlaceholder: "Type your e-mail",
     totalAttendees: "Total Attendees",
     totalAttendeesRequired: "Type the number of attendees",
     totalAttendeesMin: "Add at least one person",
