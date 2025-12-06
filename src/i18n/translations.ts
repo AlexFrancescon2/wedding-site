@@ -48,7 +48,7 @@ export const translations: TranlationsT = {
     language: "Lingua",
   },
   en: {
-    formTitle: "Let us know you're coming!",
+    formTitle: "A pinch of information from our guests",
     name: "Name",
     namePlaceholder: "Type your name",
     totalAttendees: "Total Attendees",

@@ -77,7 +77,7 @@ export const Form = () => {
             <img src={rings} alt="Wedding rings" className="w-28" />
           </div>
 
-          <h2 className="text-6xl font-bold mb-12 text-center text-white uppercase">
+          <h2 className="text-5xl font-bold mb-12 text-center text-white uppercase">
             {t("formTitle")}
           </h2>
           {/* Name */}
