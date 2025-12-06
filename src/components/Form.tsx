@@ -1,7 +1,7 @@
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 
 import { Popup } from "./SuccessPopup";
-import branches from "../assets/branches.svg";
+import branches from "../assets/branches-1.svg";
 import { db } from "../../firebase";
 import rings from "../assets/wedding-rings.png";
 import { useForm } from "react-hook-form";
@@ -61,14 +61,15 @@ export const Form = () => {
         <img
           src={branches}
           alt="branches"
-          className="absolute z-[-1] invert brightness-0 scale-x-[-1]
-          w-[350px] left-[-150px] top-80 rotate-[-15deg]
+          className="absolute z-[-1]
+          w-[1060px] left-[-600px] top-[420px] rotate-[-62deg]
           // md
-          md:w-[280px] md:left-8 md:top-72 md:rotate-[15deg]
+          md:w-[1200px] md:left-[-610px] md:top-[515px] md:rotate-[-55deg]
           //lg
-          lg:w-[280px] lg:left-48 lg:top-72 lg: rotate-[15deg]"
+          lg:w-[1400px] lg:left-[-700px] lg:top-[250px] lg:rotate-[-45deg]
+          //xl
+          xl:w-[1630px] xl:left-[-680px] xl:top-[100px] xl:rotate-[-35deg]"
         />
-        {/* bg-white/20 backdrop-blur-md shadow-xl rounded-3xl */}
         <form
           onSubmit={handleSubmit(onSubmit)}
           className=" p-10  max-w-2xl w-full mt-[100px] mb-[150px] z-4"
@@ -189,12 +190,11 @@ export const Form = () => {
         <img
           src={branches}
           alt="branches"
-          className="absolute z-[-1] invert brightness-0
-          w-[350px] right-[-255px] top-[430px] rotate-[15deg]
-          // md
-          md:w-[280px] md:right-8 md:top-72 md:rotate-[-15deg]
-          //lg
-          lg:w-[280px] lg:right-48 lg:top-72 lg:rotate-[-15deg]"
+          className="absolute z-[-1] 
+      w-[1060px] right-[-600px] top-[420px] rotate-[62deg] scale-x-[-1] 
+      md:w-[1200px] md:right-[-610px] md:top-[515px] md:rotate-[55deg] 
+      lg:w-[1400px] lg:right-[-700px] lg:top-[250px] lg:rotate-[45deg] 
+      xl:w-[1630px] xl:right-[-680px] xl:top-[100px] xl:rotate-[35deg]"
         />
         {showSuccess && (
           <Popup

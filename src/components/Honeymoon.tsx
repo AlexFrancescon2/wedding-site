@@ -25,7 +25,7 @@ export const Honeymoon = () => {
           }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <div className="w-1/3 bg-primary/70 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 relative">
+          <div className="w-1/3 bg-primarylight backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 relative">
             <motion.img
               src={plane}
               alt="plane"
@@ -39,12 +39,12 @@ export const Honeymoon = () => {
                 repeatType: "loop",
                 ease: "easeInOut",
               }}
-              className="sm:w-22 md:w-40 relative z-10"
+              className="w-16 md:w-40 relative z-10 "
             />
           </div>
 
           {/* Right panel with text */}
-          <div className="flex-1 bg-primarydark/70 backdrop-blur-xl p-4 sm:p-12 text-white relative z-10">
+          <div className="flex-1 bg-primary backdrop-blur-xl p-4 sm:p-12 text-white relative z-10">
             <h2 className="text-lg sm:text-3xl lg:text-4xl font-semibold tracking-wide mb-4">
               {t("honeymoonTitle")}
             </h2>
@@ -58,7 +58,7 @@ export const Honeymoon = () => {
             </p>
 
             <div className="bg-white p-3 sm:p-8 rounded-2xl shadow-bg max-w-full mx-auto text-center transform hover:-translate-y-1 transition-all duration-300 text-primarydark text-xs sm:text-base z-10">
-              IT60X0542811101000000123456
+              NL31ABNA0100351352
             </div>
           </div>
         </motion.div>

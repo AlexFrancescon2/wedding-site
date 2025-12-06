@@ -86,3 +86,7 @@ html {
 .clip-trapezoid-both {
   clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
 }
+
+img {
+  max-width: none !important;
+}

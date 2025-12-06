@@ -43,7 +43,7 @@ export const Countdown = () => {
 
   return (
     <div className="flex flex-col items-center justify-center space-y-2 text-white">
-      <div className="flex space-x-8 text-6xl font-title">
+      <div className="flex space-x-4 md:space-x-8 text-6xl font-title">
         <div className="text-center">
           <div className="mb-3">
             {timeLeft.months.toString().padStart(2, "0")}
