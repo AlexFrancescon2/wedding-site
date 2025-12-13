@@ -7,8 +7,8 @@ export const Spotify = () => {
   return (
     <>
       <div className="relative">
-        <div className="absolute w-screen -z-10 h-[200px] bg-white -top-[70px]" />
-        <div className="relative w-screen overflow-hidden bg-white text-primarydark clip-trapezoid-both flex items-center justify-center z-10 font-body p-4">
+        <div className="absolute w-screen -z-10 h-[200px] bg-primarylight -top-[70px]" />
+        <div className="relative w-screen overflow-hidden bg-primarylight text-primarydark clip-trapezoid-both flex items-center justify-center z-10 font-body p-4">
           <div id="spotify" className="absolute top-[60px]" />
 
           <div className="max-w-3xl w-full mt-[100px] mb-[150px] flex flex-col md:flex-row md:justify-between items-center gap-12">
