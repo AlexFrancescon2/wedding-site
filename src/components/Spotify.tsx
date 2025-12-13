@@ -14,7 +14,7 @@ export const Spotify = () => {
           <div className="max-w-3xl w-full mt-[100px] mb-[150px] flex flex-col md:flex-row md:justify-between items-center gap-12">
             <div className="order-2 md:order-1">
               <a
-                href="https://open.spotify.com/playlist/0PAiJOKPBsiU1YMYnB1Jno?si=N3ZRKBYuQSuhTB-sJ_aA3w&pt=be12bc872d55c10c346309458dbe59d4&pi=mjrxEdMWRgqGG"
+                href="https://open.spotify.com/playlist/0PAiJOKPBsiU1YMYnB1Jno?si=qFfcKM5NQMKQ7Xg9HHc-Aw&pi=-nuPW-oRTvSDN"
                 target="_blank"
               >
                 <img
@@ -23,6 +23,7 @@ export const Spotify = () => {
                   className="w-56 mx-auto"
                 />
               </a>
+              <p className="mt-3 text-center uppercase">{t("scanOrClick")}</p>
             </div>
 
             <div className="order-1 md:order-2 text-center md:text-left">
