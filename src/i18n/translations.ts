@@ -85,5 +85,38 @@ export const translations: TranlationsT = {
     honeymoonText:
       "If you wish to help making our honeymoon into a memory of a lifetime, you may do here:",
   },
-  fr: {},
+  fr: {
+    days: "Jours",
+    months: "Mois",
+    hours: "Heures",
+    formTitle: "Une pincée d’informations de nos invités",
+    name: "Nom",
+    namePlaceholder: "Indiquez votre nom et prénoms",
+    email: "Email",
+    emailPlaceholder: "Indiquez votre e-mail",
+    totalAttendees: "Nombre de personnes",
+    totalAttendeesRequired: "Indiquez le nombre de personnes",
+    totalAttendeesMin: "Ajoutez au moins une personne",
+    dietaryRestrictions: "Restrictions alimentaires",
+    dietaryRestrictionsPlaceholder: "Indiquez toutes restrictions alimentaires",
+    dietaryRestrictionsNumber: "Invités avec des restrictions alimentaires",
+    dietaryRestrictionsNumberPlaceholder:
+      "Indiquez le nombre d'invités ayant des restrictions alimentaires",
+    NumberOfKids: "Nombre d'enfants (<8 ans)",
+    NumberOfKidsPlaceholder: "Indiquez le nombre d'enfants",
+    notes: "Informations supplémentaires",
+    notesPlaceholder:
+      "Indiquez toute information supplémentaire que vous souhaitez nous communiquer !",
+    send: "Envoyer",
+    sending: "En cours d’envoi…",
+    formSuccessTitle:
+      "Youpi ! Votre présence est confirmée. Rendez-vous le 10 juillet 2026 !",
+    formFailTitle: "Oups ! Un problème est survenu, merci de réessayer.",
+    close: "Fermer",
+
+    honeymoonTitle: "Pour tous ceux qui ont demandé",
+    honeymoonSubtitle: "Votre présence est notre plus beau cadeau !",
+    honeymoonText:
+      "Si vous souhaitez nous aider à rendre notre lune de miel mémorable, vous pouvez le faire ici :",
+  },
 };

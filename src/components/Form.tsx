@@ -74,7 +74,7 @@ export const Form = () => {
         />
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className=" p-10  max-w-2xl w-full mt-[100px] mb-[150px] z-4"
+          className=" p-10  max-w-3xl w-full mt-[100px] mb-[150px] z-4"
         >
           <div className="flex items-center justify-center mb-10">
             <img src={rings} alt="Wedding rings" className="w-28" />
