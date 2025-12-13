@@ -1,4 +1,7 @@
+import { useI18n } from "../i18n/use-i18n";
+
 export const RSVPButton = () => {
+  const { t } = useI18n();
   const handleClick = () => {
     const formSection = document.getElementById("rsvp-form");
     if (formSection) {
@@ -24,7 +27,7 @@ export const RSVPButton = () => {
         focus:ring-white
       "
     >
-      RSVP
+      {t("rsvp")}
     </button>
   );
 };

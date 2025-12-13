@@ -8,12 +8,21 @@ export const Spotify = () => {
     <>
       <div className="relative">
         <div className="absolute w-screen -z-10 h-[200px] bg-white -top-[70px]" />
-        <div className="relative w-screen overflow-hidden bg-white text-primarydark clip-trapezoid-both flex items-center justify-center z-10 font-body">
+        <div className="relative w-screen overflow-hidden bg-white text-primarydark clip-trapezoid-both flex items-center justify-center z-10 font-body p-4">
           <div id="spotify" className="absolute top-[60px]" />
 
           <div className="max-w-3xl w-full mt-[100px] mb-[150px] flex flex-col md:flex-row md:justify-between items-center gap-12">
             <div className="order-2 md:order-1">
-              <img src={qrCode} alt="Wedding rings" className="w-56 mx-auto" />
+              <a
+                href="https://open.spotify.com/playlist/0PAiJOKPBsiU1YMYnB1Jno?si=N3ZRKBYuQSuhTB-sJ_aA3w&pt=be12bc872d55c10c346309458dbe59d4&pi=mjrxEdMWRgqGG"
+                target="_blank"
+              >
+                <img
+                  src={qrCode}
+                  alt="Wedding rings"
+                  className="w-56 mx-auto"
+                />
+              </a>
             </div>
 
             <div className="order-1 md:order-2 text-center md:text-left">

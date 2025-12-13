@@ -45,15 +45,15 @@ export const Honeymoon = () => {
 
           {/* Right panel with text */}
           <div className="flex-1 bg-primary backdrop-blur-xl p-4 sm:p-12 text-white relative z-10">
-            <h2 className="text-lg sm:text-3xl lg:text-4xl font-semibold tracking-wide mb-4">
+            <h2 className="text-lg sm:text-3xl lg:text-4xl font-semibold tracking-wide mb-4 leading-[20px]">
               {t("honeymoonTitle")}
             </h2>
 
-            <p className="text-xs sm:text-lg lg:text-xl mb-6 max-w-full">
+            <p className="text-xs sm:text-lg lg:text-xl mb-4 max-w-full leading-[15px]">
               {t("honeymoonSubtitle")}
             </p>
 
-            <p className="text-xs sm:text-base lg:text-lg mb-8 max-w-full">
+            <p className="text-xs sm:text-base lg:text-lg mb-6 max-w-full leading-[15px]">
               {t("honeymoonText")}
             </p>
 

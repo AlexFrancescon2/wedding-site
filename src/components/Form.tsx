@@ -49,7 +49,7 @@ export const Form = () => {
   };
 
   const onSuccessCallback = () => {
-    const formSection = document.getElementById("honeymoon");
+    const formSection = document.getElementById("spotify");
     if (formSection) {
       formSection.scrollIntoView({ behavior: "smooth" });
     }
@@ -80,7 +80,7 @@ export const Form = () => {
             <img src={rings} alt="Wedding rings" className="w-28" />
           </div>
 
-          <h2 className="text-5xl font-bold mb-12 text-center text-white uppercase">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-12 text-center text-white uppercase">
             {t("formTitle")}
           </h2>
           {/* Name */}

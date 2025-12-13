@@ -37,6 +37,13 @@ export const translations: TranlationsT = {
     honeymoonSubtitle: "La tua presenza è il regalo più grande!",
     honeymoonText:
       "Se desideri aiutarci a trasformare questo viaggio in un ricordo per sempre, puoi farlo qui:",
+    spotifyTitle: "Unitevi alla festa e alla musica!",
+    spotifyContent1:
+      "Scansionate il QR code e aggiungete le vostre canzoni preferite alla playlist, così potremo godercele insieme sulla pista da ballo.",
+    spotifyContent2:
+      "Dato che festeggeremo con ospiti italiani, francesi e inglesi, la musica internazionale è particolarmente gradita.",
+
+    rsvp: "Conferma presenza",
   },
   en: {
     days: "Days",
@@ -76,6 +83,7 @@ export const translations: TranlationsT = {
       "Scan the QR code and add your favorite songs to the playlist, so we can enjoy them together on the dance floor.",
     spotifyContent2:
       "Since we’ll be celebrating with Italian, French and English speakers, international music is especially welcome. ",
+    rsvp: "RSVP",
   },
   fr: {
     days: "Jours",
@@ -110,5 +118,11 @@ export const translations: TranlationsT = {
     honeymoonSubtitle: "Votre présence est notre plus beau cadeau !",
     honeymoonText:
       "Si vous souhaitez nous aider à rendre notre lune de miel mémorable, vous pouvez le faire ici :",
+    spotifyTitle: "Participez à la fête et à la playlist!",
+    spotifyContent1:
+      "Scannez le QR code et ajoutez vos chansons préférées à la playlist, pour faire vibrer la piste de danse !",
+    spotifyContent2:
+      "Comme nous aurons des invités italiens, français et anglais, la musique internationale est préférable pour que tout le monde en profite.",
+    rsvp: "Confirmez votre présence",
   },
 };
