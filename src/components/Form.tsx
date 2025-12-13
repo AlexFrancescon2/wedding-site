@@ -57,7 +57,7 @@ export const Form = () => {
 
   return (
     <>
-      <div className="relative min-h-[120vh] w-screen overflow-hidden bg-primary clip-trapezoid-both flex items-center justify-center z-10 font-body">
+      <div className="relative min-h-[120vh] w-screen overflow-hidden bg-primary clip-trapezoid-both flex items-center justify-center z-12 font-body">
         <div id="rsvp-form" className="absolute top-[60px]" />
 
         <img

@@ -1,0 +1,31 @@
+import qrCode from "../assets/qrcode-spotify.png";
+import { useI18n } from "../i18n/use-i18n";
+
+export const Spotify = () => {
+  const { t } = useI18n();
+
+  return (
+    <>
+      <div className="relative">
+        <div className="absolute w-screen -z-10 h-[200px] bg-white -top-[70px]" />
+        <div className="relative w-screen overflow-hidden bg-white text-primarydark clip-trapezoid-both flex items-center justify-center z-10 font-body">
+          <div id="spotify" className="absolute top-[60px]" />
+
+          <div className="max-w-3xl w-full mt-[100px] mb-[150px] flex flex-col md:flex-row md:justify-between items-center gap-12">
+            <div className="order-2 md:order-1">
+              <img src={qrCode} alt="Wedding rings" className="w-56 mx-auto" />
+            </div>
+
+            <div className="order-1 md:order-2 text-center md:text-left">
+              <h2 className="text-3xl font-bold mb-10 uppercase">
+                {t("spotifyTitle")}
+              </h2>
+              <p className="mb-4">{t("spotifyContent1")}</p>
+              <p>{t("spotifyContent2")}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};

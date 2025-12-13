@@ -37,20 +37,6 @@ export const translations: TranlationsT = {
     honeymoonSubtitle: "La tua presenza è il regalo più grande!",
     honeymoonText:
       "Se desideri aiutarci a trasformare questo viaggio in un ricordo per sempre, puoi farlo qui:",
-
-    // Old
-    heroTitle: "Ci sposiamo!",
-    heroSubtitle: "Unisciti a noi per celebrare il nostro giorno speciale",
-    ourStory: "La nostra storia",
-    details: "Dettagli evento",
-    rsvp: "RSVP / Iscriviti",
-    guests: "Numero persone",
-    dietRequests: "Richieste alimentari",
-    submit: "Invia RSVP",
-    thanks: "Grazie! La tua risposta è stata registrata.",
-    gift: "Contribuisci al viaggio di nozze",
-    gallery: "Galleria",
-    language: "Lingua",
   },
   en: {
     days: "Days",
@@ -84,6 +70,12 @@ export const translations: TranlationsT = {
     honeymoonSubtitle: "Your presence is the greatest gift!",
     honeymoonText:
       "If you wish to help making our honeymoon into a memory of a lifetime, you may do here:",
+
+    spotifyTitle: "Join the celebration and the music!",
+    spotifyContent1:
+      "Scan the QR code and add your favorite songs to the playlist, so we can enjoy them together on the dance floor.",
+    spotifyContent2:
+      "Since we’ll be celebrating with Italian, French and English speakers, international music is especially welcome. ",
   },
   fr: {
     days: "Jours",
