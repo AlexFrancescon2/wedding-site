@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 
+import { createPortal } from "react-dom";
 import { useEffect } from "react";
 import { useI18n } from "../i18n/use-i18n";
 
@@ -28,10 +29,11 @@ export const Popup = ({ message, gifUrl, onClose }: SuccessPopupProps) => {
     };
   }, []);
 
-  return (
+  // 🚀 Render outside the app tree
+  return createPortal(
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+        className="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -50,7 +52,9 @@ export const Popup = ({ message, gifUrl, onClose }: SuccessPopupProps) => {
               className="mx-auto mb-4 w-32 h-32"
             />
           )}
+
           <h2 className="text-xl font-bold mb-2 text-primarydark">{message}</h2>
+
           <button
             className="mt-4 px-6 py-2 bg-primarydark text-white rounded-full font-semibold hover:bg-primary/80 transition"
             onClick={onClose}
@@ -59,6 +63,7 @@ export const Popup = ({ message, gifUrl, onClose }: SuccessPopupProps) => {
           </button>
         </motion.div>
       </motion.div>
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };
