@@ -14,7 +14,7 @@ export const Spotify = () => {
           <div className="max-w-3xl w-full mt-[100px] mb-[150px] flex flex-col md:flex-row md:justify-between items-center gap-12">
             <div className="order-2 md:order-1">
               <a
-                href="https://open.spotify.com/playlist/0PAiJOKPBsiU1YMYnB1Jno?si=dWqVioB7SW-mHGKTcQBA8g&pi=ridGGWhTTOeDw"
+                href="https://open.spotify.com/playlist/0PAiJOKPBsiU1YMYnB1Jno?si=CoBtaDbzS9qU4zJEuQTBBw&pi=SlspM37ZRFau6"
                 target="_blank"
               >
                 <img
